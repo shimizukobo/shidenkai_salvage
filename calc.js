@@ -52,7 +52,6 @@ function staticLoadPlaces() {
     return [
         {
             name: 'Time Desk',
-            modelName: 'https://shimizukobo.github.io/ship01x8uj5h/assets/ship.glb',
             location: {
                 lat: 32.97510222900925,
                 lng: 132.57188051279311,
@@ -61,8 +60,7 @@ function staticLoadPlaces() {
 
     ];
 }
-
-// 描画するため、a-sceneに追加。
+// 描画
 function renderPlaces(places, pos) {
     let scene = document.querySelector('a-scene');
     var crd = pos.coords;
@@ -71,16 +69,12 @@ function renderPlaces(places, pos) {
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
-        let name = place.name;
-        let modelName = place.modelName;
         cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
         cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
         cal.calcSizeDist(cal.distance);
-        let model = document.createElement('a-entity');
-        model.setAttribute('look-at', '[gps-camera]');
+        let model = document.createElement('a-box');
+        model.setAttribute('material', 'color: red');
         model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
-        model.setAttribute('gltf-model', `${modelName}`);
-        model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
 
         model.addEventListener('loaded', () => {
