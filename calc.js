@@ -38,7 +38,7 @@ export class CalcVR {
             this.objectSize = '15 15 15';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 20000) {
-            this.objectSize = '10 10 10';
+            this.objectSize = '50 50 50';
             this.newDistance = 800 + (distance/1000);
         }
     }
