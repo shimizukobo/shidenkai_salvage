@@ -38,7 +38,7 @@ export class CalcVR {
             this.objectSize = '15 15 15';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 20000) {
-            this.objectSize = '50 50 50';
+            this.objectSize = '10 10 10';
             this.newDistance = 800 + (distance/1000);
         }
     }
@@ -53,8 +53,8 @@ function staticLoadPlaces() {
         {
             name: 'Time Desk',
             location: {
-            lat: 32.9426607214028,
-            lng: 132.5664306098053,
+            lat: 32.957605219720456,
+            lng: 132.56761063506156,
             }
         },
 
