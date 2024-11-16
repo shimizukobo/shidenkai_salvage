@@ -74,6 +74,13 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
+    //GeolocationAPが利用できるか確認
+    if (navigator.geolocation) {
+      test(elevation)
+    } else {
+      alert("現在地を取得できませんでした。")
+    }
+    
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
@@ -88,7 +95,7 @@ function renderPlaces(places, pos) {
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
-        model.setAttribute('position', '0 -20 0');
+        model.setAttribute('position', '0 -${elevation} 0');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
@@ -151,6 +158,46 @@ function success(pos) {
   
 function error(err) {
    console.warn(`ERROR(${err.code}): ${err.message}`);
+
+function test(elevation) {
+    test2(position,elevation);
+    navigator.geolocation.getCurrentPosition(position);
+}
+
+function test2(position,elevation) {
+
+    //まず現在地の緯度経度を取得する
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+
+    //国土地理院API用に有効桁数を合わせる。
+    var adjustiveLat = lat + "00";
+    var adjustiveLon = lon + "0";
+
+    //文字列に変換
+    var stringLat = String(adjustiveLat);
+    var stringLon = String(adjustiveLon);
+
+    //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
+    const url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
+
+//    console.log(url);
+
+    fetch(url).then(function(response) {
+      return response.text();
+    }).then(function(text) {
+//      console.log(text);
+      
+      //取得したjsonをパース
+      var jsonAltitude = JSON.parse(text);
+//      console.log("標高：" + jsonAltitude.elevation + "m");
+
+      //ポップアップ表示
+//      alert("現在地の標高は" + jsonAltitude.elevation + "mです。" +  "(" + "緯度：" + stringLat + "、経度：" + stringLon + ")")
+
+    });
+
+}    
    alert('Unable to capture current location.');
  }
 
