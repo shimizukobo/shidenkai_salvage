@@ -28,12 +28,11 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-       <a-scene
-          vr-mode-ui="enabled: false;"
-          loading-screen="enabled: false;"
-          renderer="logarithmicDepthBuffer: true; precision: medium;"
-          arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-          embedded
+        <a-scene
+            renderer="logarithmicDepthBuffer: true;"
+            embedded
+            loading-screen="enabled: false;"
+            arjs="sourceType: webcam; debugUIEnabled: true;"
         >
         <a-camera gps-camera="gpsMinDistance:200;" rotation-reader></a-camera>   
         </a-scene>
