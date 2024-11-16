@@ -47,20 +47,22 @@ export class CalcVR {
 window.onload = () => {
     navigator.geolocation.getCurrentPosition(success, error, options);
 };
-// 目的地を設定
+// 目的地情報を追加。19個くらいまでは大丈夫そう。
 function staticLoadPlaces() {
     return [
         {
             name: 'Time Desk',
+            modelName: 'timedesk.gltf',
             location: {
-            lat: 32.957605219720456,
-            lng: 132.56761063506156,
+                lat: 43.062533,
+                lng: 141.353638,
             }
         },
 
     ];
 }
-// 描画
+
+// 描画するため、a-sceneに追加。
 function renderPlaces(places, pos) {
     let scene = document.querySelector('a-scene');
     var crd = pos.coords;
@@ -69,12 +71,16 @@ function renderPlaces(places, pos) {
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+        let name = place.name;
+        let modelName = place.modelName;
         cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
         cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
         cal.calcSizeDist(cal.distance);
-        let model = document.createElement('a-box');
-        model.setAttribute('material', 'color: red');
+        let model = document.createElement('a-entity');
+        model.setAttribute('look-at', '[gps-camera]');
         model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
+        model.setAttribute('gltf-model', `./assets/${modelName}`);
+        model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
 
         model.addEventListener('loaded', () => {
