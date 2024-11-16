@@ -35,9 +35,10 @@
           arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
           embedded
         >
-        <script src="./calc.js" type="module"></script>
+        <a-camera gps-camera="gpsMinDistance:200;" rotation-reader></a-camera>   
         </a-scene>
         <button id="screenshot-button"></button>
+        <script src="./calc.js" type="module"></script>
         <script>
 //自宅
 //                gps-entity-place="latitude: 32.96415692283136; longitude: 132.57350878260334;"
