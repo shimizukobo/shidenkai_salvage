@@ -35,9 +35,6 @@
           arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
           embedded
         >
-//自宅
-//                gps-entity-place="latitude: 32.96415692283136; longitude: 132.57350878260334;"
-//久良湾
             <a-box
                 material="color: red"
                 gps-entity-place="latitude: 32.94288831590341; longitude: 132.56609060047407;"
@@ -61,6 +58,9 @@
         </a-scene>
         <button id="screenshot-button"></button>
         <script>
+//自宅
+//                gps-entity-place="latitude: 32.96415692283136; longitude: 132.57350878260334;"
+//久良湾            
             document.getElementById("screenshot-button").addEventListener("click", function() {
                 html2canvas(document.body).then(function(canvas) {
                     // カメラ画像を取得する為、AR.jsで展開されているvideoを取得
