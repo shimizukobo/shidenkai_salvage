@@ -53,8 +53,8 @@ function staticLoadPlaces() {
         {
             name: 'Time Desk',
             location: {
-                lat: 32.94226274616757,
-                lng: 132.56706079437618,
+                lat: 32.96510687475258,
+                lng: 132.58528236690506,
             }
         },
 
