@@ -160,11 +160,13 @@ function renderPlaces(places, pos) {
 }
 */
 
+/*
 var options = {
     enableHighAccuracy: true,
     timeout: 50000,
     maximumAge: 0
   };
+*/
   
 function success(pos) {
     let places = staticLoadPlaces();
