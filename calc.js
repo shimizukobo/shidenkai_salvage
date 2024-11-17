@@ -79,8 +79,8 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
-    //GeolocationAPが利用できるか確認
 /*
+    //GeolocationAPが利用できるか確認
     if (navigator.geolocation) {
       test(elevation);
       alert(elevation);
@@ -102,17 +102,17 @@ function renderPlaces(places, pos) {
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
-
+/*
         elevation = 140;
         if(elevation == '-----'){
             model.setAttribute('position', '0 0 0');
         }else {
             model.setAttribute('position', '0 -${elevation} 0');
         }
-
+*/
 //        model.setAttribute('position', '0 -${elevation} 0');
 //        model.setAttribute('position', '0 0 0');
-//        model.setAttribute('position', '0 -140 0');
+        model.setAttribute('position', '0 -140 0');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
