@@ -60,8 +60,8 @@ function staticLoadPlaces() {
             name: 'Time Desk',
             modelName: 'https://shimizukobo.github.io/ship01x8uj5h/assets/ship.glb',
             location: {
-                lat: 32.94250911123393,
-                lng: 132.56701256189322,
+                lat: 32.94275472461306,
+                lng: 132.56692766713076,
             }
         },
 
