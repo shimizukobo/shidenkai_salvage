@@ -26,24 +26,24 @@ export class CalcVR {
     // サイズを計算
     calcSizeDist(distance) {
         if(distance <= 1000 && distance >= 500){
-            this.objectSize = '25 25 25';
-//            this.objectSize = '2.5 2.5 2.5';
+//            this.objectSize = '25 25 25';
+            this.objectSize = '2.5 2.5 2.5';
             this.newDistance = 800;
         }else if(distance > 1000 && distance <= 8000) {
-            this.objectSize = '20 20 20';
-//            this.objectSize = '2.0 2.0 2.0';
+//            this.objectSize = '20 20 20';
+            this.objectSize = '2.0 2.0 2.0';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 8000 && distance <= 16000) {
-            this.objectSize = '18 18 18';
-//            this.objectSize = '1.8 1.8 1.8';
+//            this.objectSize = '18 18 18';
+            this.objectSize = '1.8 1.8 1.8';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 16000 && distance <= 20000) {
-            this.objectSize = '15 15 15';
-//            this.objectSize = '1.5 1.5 1.5';
+//            this.objectSize = '15 15 15';
+            this.objectSize = '1.5 1.5 1.5';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 20000) {
-            this.objectSize = '10 10 10';
-//            this.objectSize = '1 1 1';
+//            this.objectSize = '10 10 10';
+            this.objectSize = '1 1 1';
             this.newDistance = 800 + (distance/1000);
         }
     }
