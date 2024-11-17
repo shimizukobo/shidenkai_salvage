@@ -62,7 +62,7 @@ window.onload = () => {
 function staticLoadPlaces() {
     return [
         {
-            name: 'Time Desk',
+            name: 'ship',
             modelName: 'https://shimizukobo.github.io/ship01x8uj5h/assets/ship.glb',
             location: {
                 lat: 32.94275472461306,
