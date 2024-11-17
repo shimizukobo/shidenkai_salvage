@@ -80,14 +80,14 @@ function renderPlaces(places, pos) {
     let cal = new CalcVR();
 
     //GeolocationAPが利用できるか確認
-/*
+
     if (navigator.geolocation) {
       test(elevation);
       alert(elevation);
     } else {
       alert("現在地を取得できませんでした。");
     }
-*/    
+    
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
