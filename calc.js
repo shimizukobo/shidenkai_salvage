@@ -102,13 +102,14 @@ function renderPlaces(places, pos) {
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
-/*
+
+        elevation = 140;
         if(elevation == '-----'){
             model.setAttribute('position', '0 0 0');
         }else {
             model.setAttribute('position', '0 -${elevation} 0');
         }
-*/
+
 //        model.setAttribute('position', '0 -${elevation} 0');
 //        model.setAttribute('position', '0 0 0');
         model.setAttribute('position', '0 -140 0');
