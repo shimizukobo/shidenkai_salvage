@@ -75,12 +75,12 @@ function renderPlaces(places, pos) {
     let cal = new CalcVR();
 
     //GeolocationAPが利用できるか確認
-    if (navigator.geolocation) {
+/*    if (navigator.geolocation) {
       test(elevation)
     } else {
       alert("現在地を取得できませんでした。")
     }
-    
+*/
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
@@ -158,6 +158,9 @@ function success(pos) {
   
 function error(err) {
    console.warn(`ERROR(${err.code}): ${err.message}`);
+   alert('Unable to capture current location.');
+ }
+
 
 function test(elevation) {
     test2(position,elevation);
@@ -198,6 +201,3 @@ function test2(position,elevation) {
     });
 
 }    
-   alert('Unable to capture current location.');
- }
-
