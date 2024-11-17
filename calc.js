@@ -81,8 +81,8 @@ function renderPlaces(places, pos) {
 
     //GeolocationAPが利用できるか確認
 /*    if (navigator.geolocation) {
-      alert(elevation)
       test(elevation)
+      alert(elevation)
     } else {
       alert("現在地を取得できませんでした。")
     }
