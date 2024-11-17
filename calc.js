@@ -192,7 +192,8 @@ function test2(position,elevation) {
     const url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
 
 //    console.log(url);
-
+    elevation = 0;
+    
     fetch(url).then(function(response) {
       return response.text();
     }).then(function(text) {
