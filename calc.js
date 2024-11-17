@@ -158,7 +158,7 @@ function renderPlaces(places, pos) {
         scene.appendChild(model);
     });
 }
-*/
+ */
 
 
 var options = {
