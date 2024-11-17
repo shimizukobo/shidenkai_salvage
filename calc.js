@@ -80,13 +80,13 @@ function renderPlaces(places, pos) {
     let cal = new CalcVR();
 
     //GeolocationAPが利用できるか確認
-/*    if (navigator.geolocation) {
+    if (navigator.geolocation) {
       alert(elevation)
       test(elevation)
     } else {
       alert("現在地を取得できませんでした。")
     }
-*/    
+    
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
@@ -200,6 +200,7 @@ function test2(position,elevation) {
       
       //取得したjsonをパース
       var jsonAltitude = JSON.parse(text);
+        elevation = jsonAltitude.elevation;
 //      console.log("標高：" + jsonAltitude.elevation + "m");
 
       //ポップアップ表示
