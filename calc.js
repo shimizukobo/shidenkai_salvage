@@ -95,7 +95,7 @@ function renderPlaces(places, pos) {
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
-//        model.setAttribute('position', '0 -${elevation} 0');
+        model.setAttribute('position', '0 -${elevation} 0');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
