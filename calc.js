@@ -79,7 +79,7 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
-    var bear = 0;
+//    var bear = 0;
 
 /*
     //GeolocationAPが利用できるか確認
@@ -99,13 +99,14 @@ function renderPlaces(places, pos) {
         cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
         cal.calcSizeDist(cal.distance);
         let model = document.createElement('a-entity');
-        model.setAttribute('look-at', '[gps-camera]');
+//        model.setAttribute('look-at', '[gps-camera]');
+        model.setAttribute('look-at', '');
         model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
-        bear = (360 - cal.bearing + 180) % 360;
-        model.setAttribute('rotation', `0 0 -${bear}`);
+//        bear = (360 - cal.bearing + 180) % 360;
+//        model.setAttribute('rotation', `0 0 -${bear}`);
 /*
         elevation = 140;
         if(elevation == '-----'){
