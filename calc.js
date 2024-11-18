@@ -79,6 +79,8 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
+    var bear = 0;
+
 /*
     //GeolocationAPが利用できるか確認
     if (navigator.geolocation) {
@@ -102,7 +104,8 @@ function renderPlaces(places, pos) {
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
-        model.setAttribute('rotation', `0 0 -${cal.bearing}`);
+        bear = (360 - cal.bearing + 180) % 360;
+        model.setAttribute('rotation', `0 0 -${bear}`);
 /*
         elevation = 140;
         if(elevation == '-----'){
