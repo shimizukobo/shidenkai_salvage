@@ -97,8 +97,8 @@ function renderPlaces(places, pos) {
         cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
         cal.calcSizeDist(cal.distance);
         let model = document.createElement('a-entity');
-//        model.setAttribute('look-at', '[gps-camera]');
-        model.setAttribute('look-at', '');
+        model.setAttribute('look-at', '[gps-camera]');
+//        model.setAttribute('look-at', '');
         model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
