@@ -99,7 +99,7 @@ function renderPlaces(places, pos) {
         
         let model = document.createElement('a-entity');
 //        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
-        model.setAttribute('look-at', '');
+        model.setAttribute('look-at', '');    //向きを固定する
 //        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
         model.setAttribute('gltf-model', `${modelName}`);
