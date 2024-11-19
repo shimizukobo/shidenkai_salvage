@@ -79,6 +79,7 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
+/*
     //まず現在地の緯度経度を取得する
     var lat = pos.coords.latitude;
     var lon = pos.coords.longitude;
@@ -98,8 +99,8 @@ fetch(url).then(function(response) {
       var jsonAltitude = JSON.parse(text);
 alert("標高 " + jsonAltitude)
         });
-    
-//alert("標高 " + pos.coords.altitude)
+*/    
+alert("標高 " + pos.coords.altitude)
 
     places.forEach((place) => {
         let latitude = place.location.lat;
