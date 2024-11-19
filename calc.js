@@ -80,6 +80,7 @@ function renderPlaces(places, pos) {
     let cal = new CalcVR();
 
     places.forEach((place) => {
+alert("標高 " + pos.coords.altude)
         let latitude = place.location.lat;
         let longitude = place.location.lng;
         let name = place.name;
