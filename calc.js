@@ -84,56 +84,17 @@ function renderPlaces(places, pos) {
         let longitude = place.location.lng;
         let name = place.name;
         let modelName = place.modelName;
-//        cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
-//        cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
-//        cal.calcSizeDist(cal.distance);
+        cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
+        cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
+        cal.calcSizeDist(cal.distance);
         
         let model = document.createElement('a-entity');
 //        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
         model.setAttribute('look-at', '');    //向きを固定する
-//        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
-        model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
+        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
+//        model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
-//        model.setAttribute('scale', `${cal.objectSize}`);
-
-        model.addEventListener('loaded', () => {
-            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-        });
-
-        scene.appendChild(model);
-    });
-}
-
-/*
-// 目的地情報を追加。19個くらいまでは大丈夫そう。
-function staticLoadPlaces() {
-    return [
-        {
-            name: 'Time Desk',
-            location: {
-                lat: 32.94250911123393,
-                lng: 132.56701256189322,
-            }
-        },
-
-    ];
-}
-// 描画
-function renderPlaces(places, pos) {
-    let scene = document.querySelector('a-scene');
-    var crd = pos.coords;
-    let cal = new CalcVR();
-
-    places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
-        cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
-        cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
-        cal.calcSizeDist(cal.distance);
-        let model = document.createElement('a-box');
-        model.setAttribute('material', 'color: red');
-        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         model.setAttribute('scale', `${cal.objectSize}`);
 
         model.addEventListener('loaded', () => {
@@ -143,8 +104,6 @@ function renderPlaces(places, pos) {
         scene.appendChild(model);
     });
 }
- */
-
 
 var options = {
     enableHighAccuracy: true,
