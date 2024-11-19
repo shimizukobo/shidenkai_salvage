@@ -93,11 +93,12 @@ function renderPlaces(places, pos) {
         let longitude = place.location.lng;
         let name = place.name;
         let modelName = place.modelName;
-        cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
-        cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
-        cal.calcSizeDist(cal.distance);
+//        cal.calcDist([crd.latitude, crd.longitude], [latitude, longitude]);
+//        cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
+//        cal.calcSizeDist(cal.distance);
+        
         let model = document.createElement('a-entity');
-//        model.setAttribute('look-at', '[gps-camera]');
+//        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
         model.setAttribute('look-at', '');
         model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         model.setAttribute('gltf-model', `${modelName}`);
