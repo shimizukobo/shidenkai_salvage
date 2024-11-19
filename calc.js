@@ -79,8 +79,24 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
+    //まず現在地の緯度経度を取得する
+    var lat = pos.coords.latitude;
+    var lon = pos.coords.longitude;
+    //国土地理院API用に有効桁数を合わせる。
+    var adjustiveLat = lat + "00";
+    var adjustiveLon = lon + "0";
+    //文字列に変換
+    var stringLat = String(adjustiveLat);
+    var stringLon = String(adjustiveLon);
+     //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
+    const url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
+     //取得したjsonをパース
+      var jsonAltitude = JSON.parse(text);
+alert("標高 " + jsonAltitude)
+ 
+//alert("標高 " + pos.coords.altitude)
+
     places.forEach((place) => {
-alert("標高 " + pos.coords.altitude)
         let latitude = place.location.lat;
         let longitude = place.location.lng;
         let name = place.name;
