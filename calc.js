@@ -100,10 +100,12 @@ function renderPlaces(places, pos) {
         let model = document.createElement('a-entity');
 //        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
         model.setAttribute('look-at', '');
-        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
+//        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
+        model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
-        model.setAttribute('scale', `${cal.objectSize}`);
+//        model.setAttribute('scale', `${cal.objectSize}`);
+
 //        bear = (360 - cal.bearing + 180) % 360;
 //        model.setAttribute('rotation', `0 0 -${bear}`);
 /*
