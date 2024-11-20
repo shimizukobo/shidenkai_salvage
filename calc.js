@@ -92,8 +92,8 @@ function renderPlaces(places, pos) {
     var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
     var jsonAltitude = 0;
     
-alert("9緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
-    fetch('http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON')
+alert("10緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
+    fetch(url)
     .then((response)=> {
         alert("OK");
       return response.json();
