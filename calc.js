@@ -110,8 +110,8 @@ alert("2");
 
 var jsonAltitude = pos.coords.altitude;
 alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
-//if(jsonAltitude == 'undefind') {
-if(jsonAltitude == null) {
+if(jsonAltitude == 'undefind') {
+//if(jsonAltitude == null) {
     jsonAltitude = 0;
 }
 
