@@ -106,6 +106,7 @@ function renderPlaces(places, pos) {
 		});
 */
 
+alert(url);
     fetch(url)
     .then(function(response) {
         alert("OK");
