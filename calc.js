@@ -103,7 +103,7 @@ alert("9緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
       jsonAltitude = JSON.stringify(data);
         alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     })
-    .catch(error=> { //失敗時に実行される
+    .catch((error)=> { //失敗時に実行される
         alert("Error");
     });	
 
