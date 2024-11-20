@@ -108,13 +108,16 @@ function renderPlaces(places, pos) {
 
     fetch(url)
     .then(function(response) {
+        alert("OK");
       return response.json();
     })
     .then(function(text) {   
     //取得したjsonをパース
       var jsonAltitude = JSON.stringify(text);
         alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
-        });
+　　　.catch(function(err1) { //失敗時に実行される
+        alert("Error");
+    });
 
 /*
 var jsonAltitude = pos.coords.altitude;
