@@ -105,6 +105,17 @@ alert("10緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
     })
     .catch((error)=> { //失敗時に実行される
         alert("Error");
+/*
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = () => {
+      console.log(xhr.status);
+    };
+    xhr.onerror = () => {
+        alert("Error2");
+    };
+    xhr.send();
+*/        
     });	
 
 /*
