@@ -92,7 +92,7 @@ function renderPlaces(places, pos) {
     var url = "http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=" + stringLon + "&lat=" + stringLat + "&outtype=JSON";
 
 alert("2緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
-    fetch(url)
+    await fetch(url)
     .then(response=> {
         alert("OK");
       return response.json();
