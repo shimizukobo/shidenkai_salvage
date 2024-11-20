@@ -103,7 +103,8 @@ alert("標高 " + jsonAltitude);
 
 alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + pos.coords.altitude);
 var jsonAltitude = pos.coords.altitude;
-if(jsonAltitude == 'undefind') {
+//if(jsonAltitude == 'undefind') {
+if(jsonAltitude == null) {
     jsonAltitude = 0;
 }
     
