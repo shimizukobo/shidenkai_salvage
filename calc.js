@@ -97,11 +97,15 @@ fetch(url).then(function(response) {
     
     //取得したjsonをパース
       var jsonAltitude = JSON.parse(text);
-alert("標高 " + jsonAltitude)
+alert("標高 " + jsonAltitude);
         });
 */    
-alert("標高 " + pos.coords.altitude)
-
+alert("標高 " + pos.coords.altitude);
+var jsonAltitude = pos.coords.altitude;
+if(jsonAltitude == 'undefind') {
+    jsonAltitude = 0;
+}
+    
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
@@ -119,6 +123,7 @@ alert("標高 " + pos.coords.altitude)
         model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
+        model.setAttribute('position', `0 0 -${jsonAltitude}`);
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
