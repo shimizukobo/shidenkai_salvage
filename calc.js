@@ -89,20 +89,22 @@ function renderPlaces(places, pos) {
     var stringLat = String(adjustiveLat);
     var stringLon = String(adjustiveLon);
      //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
-    var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
-
-alert("6緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
+var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=${adjustiveLon}&lat=${adjustiveLat}&outtype=JSON';
+//    var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
+    var jsonAltitude = 0;
+    
+alert("7緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
     fetch(url)
     .then(response=> {
         alert("OK");
       return response.json();
     })
-    .then(data=>{   
+    .then(data=> {
     //取得したjsonをパース
-      var jsonAltitude = JSON.stringify(data);
+      jsonAltitude = JSON.stringify(data);
         alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     })
-    .catch(error=>{ //失敗時に実行される
+    .catch(error=> { //失敗時に実行される
         alert("Error");
     });	
 
