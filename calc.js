@@ -80,6 +80,7 @@ function renderPlaces(places, pos) {
     let cal = new CalcVR();
 
 
+alert("1");
     //まず現在地の緯度経度を取得する
     var lat = pos.coords.latitude;
     var lon = pos.coords.longitude;
@@ -89,7 +90,6 @@ function renderPlaces(places, pos) {
     //文字列に変換
     var stringLat = String(adjustiveLat);
     var stringLon = String(adjustiveLon);
-alert("1");
      //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
     const url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
 /*
