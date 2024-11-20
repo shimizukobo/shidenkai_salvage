@@ -79,7 +79,6 @@ function renderPlaces(places, pos) {
     var crd = pos.coords;
     let cal = new CalcVR();
 
-alert("1");
 /*
 alert("1");
     //まず現在地の緯度経度を取得する
@@ -108,14 +107,14 @@ alert("2");
     });
 */
 	
-/*
+
 var jsonAltitude = pos.coords.altitude;
 alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
 //if(jsonAltitude == 'undefind') {
 if(jsonAltitude == null) {
     jsonAltitude = 0;
 }
-*/
+
     
     places.forEach((place) => {
         let latitude = place.location.lat;
