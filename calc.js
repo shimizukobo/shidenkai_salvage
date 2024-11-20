@@ -90,7 +90,8 @@ function renderPlaces(places, pos) {
     var stringLon = String(adjustiveLon);
      //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
     const url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
-alert("2");
+
+alert("緯度 " + stringLat + "\n経度 " + stringLon + "¥n" + url);
     fetch(url)
     .then(response=> {
         alert("OK");
