@@ -91,15 +91,30 @@ function renderPlaces(places, pos) {
     var stringLon = String(adjustiveLon);
      //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
     const url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
-fetch(url).then(function(response) {
-      return response.text();
-    }).then(function(text) {
-    
+/*
+    fetch("http://httpbin.org/get?" + para1.toString())
+
+		.then(function(response1) { //成功時に実行される
+			console.log("status=" + response1.status); //status=200
+			return response1.json();
+		})
+		.then(function(data1) { //成功時に実行される
+			console.log(JSON.stringify(data1)); //JSONを出力
+		})
+		.catch(function(err1) { //失敗時に実行される
+			console.log("err=" + err1);
+		});
+*/
+
+    fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(text) {   
     //取得したjsonをパース
-      var jsonAltitude = JSON.parse(text);
+      var jsonAltitude = JSON.stringify(text);
         alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
         });
-
 
 /*
 var jsonAltitude = pos.coords.altitude;
