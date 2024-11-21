@@ -92,7 +92,7 @@ function renderPlaces(places, pos) {
     var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
     var jsonAltitude = 0;
 
-alert("20緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
+//alert("20緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
 
     fetch(url)
     .then((response)=> {
@@ -101,21 +101,21 @@ alert("20緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
     })
     .then((data)=> {    //取得したjsonをパース
       jsonAltitude = JSON.stringify(data);
-        alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
+        //alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     })
     .catch((error)=> {  //失敗時に実行される
-        alert("Error");
+        //alert("Error");
     
-var jsonAltitude = pos.coords.altitude;
-alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
-if(jsonAltitude == 'undefind') {
-//if(jsonAltitude == null) {
-    jsonAltitude = 0;
-}
-else{
-    jsonAltitude = jsonAltitude - 35;
-}
+        var jsonAltitude = pos.coords.altitude;
+        if(jsonAltitude == 'undefind') {
+        //if(jsonAltitude == null) {
+            jsonAltitude = 0;
+        }
+        else{
+            jsonAltitude = jsonAltitude - 35;
+        }
     });	
+alert("21\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     
     places.forEach((place) => {
         let latitude = place.location.lat;
