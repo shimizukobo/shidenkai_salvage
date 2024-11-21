@@ -114,7 +114,7 @@ alert("標高 " + jsonAltitude);
 //            jsonAltitude = jsonAltitude - 34;
             jsonAltitude = 1000;
         }
-alert("24\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
+alert("25\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     });	
     
     places.forEach((place) => {
