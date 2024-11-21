@@ -113,7 +113,7 @@ if(jsonAltitude == 'undefind') {
     jsonAltitude = 0;
 }
 else{
-    jsonAltitude = jsonAltitude - 35
+    jsonAltitude = jsonAltitude - 35;
 }
     });	
     
