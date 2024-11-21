@@ -92,7 +92,7 @@ function renderPlaces(places, pos) {
     var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
     var jsonAltitude = 0;
     
-alert("17緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
+alert("18緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
 
 /*
   const response = await fetch(url);
@@ -100,15 +100,7 @@ alert("17緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
   alert(JSON.stringify(jsondata));
 */
 
-const body = 'lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON'; // 'key1=value1&key2=value2'
-    
-    fetch('http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
-  },
-  body: body
-})
+    fetch(url)
     .then((response)=> {
         alert("OK");
       return response.json();
@@ -120,18 +112,9 @@ const body = 'lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON'; // 'key
     })
     .catch((error)=> { //失敗時に実行される
         alert("Error");
+   });	
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onload = () => {
-      alert(xhr.status);
-    };
-    xhr.onerror = () => {
-        alert("Error2");
-    };
-    xhr.send(null);
-    });	
-
+    
 /*
 var jsonAltitude = pos.coords.altitude;
 alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
