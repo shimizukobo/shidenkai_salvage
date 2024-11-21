@@ -112,10 +112,10 @@ function renderPlaces(places, pos) {
             jsonAltitude = 0;
         }
         else{
-            jsonAltitude = jsonAltitude - 35;
+            jsonAltitude = jsonAltitude - 34;
         }
     });	
-alert("21\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
+alert("22\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     
     places.forEach((place) => {
         let latitude = place.location.lat;
