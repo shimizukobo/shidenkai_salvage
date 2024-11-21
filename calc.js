@@ -113,8 +113,8 @@ alert("標高 " + jsonAltitude);
         else{
             jsonAltitude = jsonAltitude - 34;
         }
+alert("24\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     });	
-alert("23\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     
     places.forEach((place) => {
         let latitude = place.location.lat;
