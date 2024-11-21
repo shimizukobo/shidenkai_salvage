@@ -74,7 +74,7 @@ function staticLoadPlaces() {
 }
 
 // 描画するため、a-sceneに追加。
-async function renderPlaces(places, pos) {
+function renderPlaces(places, pos) {
     let scene = document.querySelector('a-scene');
     var crd = pos.coords;
     let cal = new CalcVR();
@@ -94,21 +94,12 @@ async function renderPlaces(places, pos) {
     
 alert("16緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
 
+/*
   const response = await fetch(url);
   const jsondata = await response.json();
   alert(JSON.stringify(jsondata));
-/*
-try {
-    const res = await fetch(url);
-    jsonAltitude = JSON.stringify(res.json);
-    alert(jsonAltitude);
-    // 通信成功時
-} catch (err) {
-    alert(err);
-    // 通信失敗時
-}
 */
-/*
+
     fetch(url)
     .then((response)=> {
         alert("OK");
@@ -121,18 +112,17 @@ try {
     })
     .catch((error)=> { //失敗時に実行される
         alert("Error");
-/*
+
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onload = () => {
-      console.log(xhr.status);
+      alert(xhr.status);
     };
     xhr.onerror = () => {
         alert("Error2");
     };
     xhr.send();
     });	
-*/        
 
 /*
 var jsonAltitude = pos.coords.altitude;
