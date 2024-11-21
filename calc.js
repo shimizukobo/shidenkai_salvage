@@ -107,6 +107,7 @@ function renderPlaces(places, pos) {
         //alert("Error");
     
         var jsonAltitude = pos.coords.altitude;
+alert("標高 " + jsonAltitude);
         if(jsonAltitude == 'undefind') {
         //if(jsonAltitude == null) {
             jsonAltitude = 0;
