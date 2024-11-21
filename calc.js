@@ -96,7 +96,7 @@ alert("15緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
 
 try {
     const res = await fetch(url);
-    jsonAltitude = JSON.stringify(res);
+    jsonAltitude = JSON.stringify(res.json);
     alert(jsonAltitude);
     // 通信成功時
 } catch (err) {
