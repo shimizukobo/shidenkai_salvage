@@ -28,27 +28,32 @@ export class CalcVR {
         if(distance <= 1000 && distance >= 500){
 //            this.objectSize = '25 25 25';
 //            this.objectSize = '2.5 2.5 2.5';
-            this.objectSize = '1.2 1.2 1.2';
+//            this.objectSize = '1.2 1.2 1.2';
+            this.objectSize = '1.0 1.0 1.0';
             this.newDistance = 800;
         }else if(distance > 1000 && distance <= 8000) {
 //            this.objectSize = '20 20 20';
 //            this.objectSize = '2.0 2.0 2.0';
-            this.objectSize = '1.0 1.0 1.0';
+//            this.objectSize = '1.0 1.0 1.0';
+            this.objectSize = '0.9 0.9 0.9';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 8000 && distance <= 16000) {
 //            this.objectSize = '18 18 18';
 //            this.objectSize = '1.8 1.8 1.8';
-            this.objectSize = '0.9 0.9 0.9';
+//            this.objectSize = '0.9 0.9 0.9';
+            this.objectSize = '0.8 0.8 0.8';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 16000 && distance <= 20000) {
 //            this.objectSize = '15 15 15';
 //            this.objectSize = '1.5 1.5 1.5';
-            this.objectSize = '0.7 0.7 0.7';
+//            this.objectSize = '0.7 0.7 0.7';
+            this.objectSize = '0.6 0.6 0.6';
             this.newDistance = 800 + (distance/1000);
         }else if(distance > 20000) {
 //            this.objectSize = '10 10 10';
 //            this.objectSize = '1 1 1';
-            this.objectSize = '0.5 0.5 0.5';
+//            this.objectSize = '0.5 0.5 0.5';
+            this.objectSize = '0.4 0.4 0.4';
             this.newDistance = 800 + (distance/1000);
         }
     }
