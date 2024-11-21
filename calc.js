@@ -111,7 +111,10 @@ alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n
 if(jsonAltitude == 'undefind') {
 //if(jsonAltitude == null) {
     jsonAltitude = 0;
-{}else{jsonAltitude = jsonAltitude - 35}
+}
+else{
+    jsonAltitude = jsonAltitude - 35
+}
     });	
     
     places.forEach((place) => {
