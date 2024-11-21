@@ -114,7 +114,7 @@ alert("標高 " + jsonAltitude);
             jsonAltitude = jsonAltitude - 33;
 //            jsonAltitude = 1000;
         }
-alert("30\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
+alert("31\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     });	
     
     places.forEach((place) => {
@@ -135,7 +135,7 @@ alert("30\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude +
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
 //        model.setAttribute('position', `0 0 -${jsonAltitude}`);
-        model.setAttribute('position', `0 -${jsonAltitude} 0`);
+        model.setAttribute('position', '0 -500 0');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
