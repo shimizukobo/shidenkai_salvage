@@ -100,7 +100,15 @@ alert("17緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
   alert(JSON.stringify(jsondata));
 */
 
-    fetch(url)
+const body = 'lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON'; // 'key1=value1&key2=value2'
+    
+    fetch('http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: body
+})
     .then((response)=> {
         alert("OK");
       return response.json();
