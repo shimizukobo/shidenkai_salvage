@@ -91,8 +91,8 @@ function renderPlaces(places, pos) {
      //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
     var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
     var jsonAltitude = 0;
-    
-alert("19緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
+
+alert("20緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
 
     fetch(url)
     .then((response)=> {
@@ -111,8 +111,7 @@ alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n
 if(jsonAltitude == 'undefind') {
 //if(jsonAltitude == null) {
     jsonAltitude = 0;
-}
-
+{}else{jsonAltitude = jsonAltitude - 35}
     });	
     
     places.forEach((place) => {
