@@ -94,26 +94,18 @@ function renderPlaces(places, pos) {
     
 alert("18緯度 " + stringLat + "\n経度 " + stringLon + "\n" + url);
 
-/*
-  const response = await fetch(url);
-  const jsondata = await response.json();
-  alert(JSON.stringify(jsondata));
-*/
-
     fetch(url)
     .then((response)=> {
         alert("OK");
       return response.json();
     })
-    .then((data)=> {
-    //取得したjsonをパース
+    .then((data)=> {    //取得したjsonをパース
       jsonAltitude = JSON.stringify(data);
         alert("緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     })
-    .catch((error)=> { //失敗時に実行される
+    .catch((error)=> {  //失敗時に実行される
         alert("Error");
    });	
-
     
 /*
 var jsonAltitude = pos.coords.altitude;
