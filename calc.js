@@ -74,7 +74,7 @@ function staticLoadPlaces() {
 }
 
 // 描画するため、a-sceneに追加。
-function renderPlaces(places, pos) {
+async function renderPlaces(places, pos) {
     let scene = document.querySelector('a-scene');
     var crd = pos.coords;
     let cal = new CalcVR();
