@@ -111,7 +111,8 @@ alert("標高 " + jsonAltitude);
             jsonAltitude = 0;
         }
         else{
-            jsonAltitude = jsonAltitude - 34;
+//            jsonAltitude = jsonAltitude - 34;
+            jsonAltitude = 1000;
         }
 alert("24\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
     });	
