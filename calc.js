@@ -119,7 +119,7 @@ alert("標高 " + jsonAltitude);
             jsonAltitude = jsonAltitude - 33;
 //            jsonAltitude = 1000;
         }
-alert("37\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
+alert("38\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude);
 //jsonAltitude = jsonAltitude*2;
     });	
     
@@ -135,11 +135,11 @@ alert("37\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude +
         let model = document.createElement('a-entity');
 //        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
         model.setAttribute('look-at', '');    //向きを固定する
-        model.setAttribute('gps-entity-place', 'latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};');
+        model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
 //        model.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
-        model.setAttribute('gltf-model', '${modelName}');
+        model.setAttribute('gltf-model', `${modelName}`);
         model.setAttribute('animation-mixer', '');
-        model.setAttribute('scale', '${cal.objectSize}');
+        model.setAttribute('scale', `${cal.objectSize}`);
 //        model.setAttribute('position', '0 0 -${jsonAltitude}');
         model.setAttribute('position', '0 -${jsonAltitude} 0');
 
