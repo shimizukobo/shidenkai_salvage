@@ -119,8 +119,8 @@ function renderPlaces(places, pos) {
             jsonAltitude = jsonAltitude - 33;
 //            jsonAltitude = 1000;
         }
-alert("42\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
-jsonAltitude = jsonAltitude*4;
+alert("43\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
+jsonAltitude = -jsonAltitude*4;
     });	
     
     places.forEach((place) => {
@@ -141,7 +141,7 @@ jsonAltitude = jsonAltitude*4;
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', `${cal.objectSize}`);
 //        model.setAttribute('position', '0 0 -${jsonAltitude}');
-        model.setAttribute('position', `0 -${jsonAltitude} 0`);
+        model.setAttribute('position', `0 ${jsonAltitude} 0`);
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
