@@ -83,7 +83,9 @@ function renderPlaces(places, pos) {
     let scene = document.querySelector('a-scene');
     var crd = pos.coords;
     let cal = new CalcVR();
+    var jsonAltitude = 0;
 
+/*
     //まず現在地の緯度経度を取得する
     var lat = pos.coords.latitude;
     var lon = pos.coords.longitude;
@@ -95,7 +97,6 @@ function renderPlaces(places, pos) {
     var stringLon = String(adjustiveLon);
      //国土地理院APIに現在地の緯度経度を渡して、標高を取得する
     var url = 'http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=' + stringLon + '&lat=' + stringLat + '&outtype=JSON';
-    var jsonAltitude = 0;
 
     fetch(url)
     .then((response)=> {
@@ -108,21 +109,23 @@ function renderPlaces(places, pos) {
     })
     .catch((error)=> {  //失敗時に実行される
         //alert("Error");
+    });
     
-        var jsonAltitude = pos.coords.altitude;
+
+*/
+        jsonAltitude = pos.coords.altitude;
 //alert("標高 " + jsonAltitude);
         if(jsonAltitude == 'undefind') {
         //if(jsonAltitude == null) {
             jsonAltitude = 0;
         }
         else{
-//            jsonAltitude = jsonAltitude - 33;
-            jsonAltitude = 250;
-        }
-alert("47\nちょうど撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
-jsonAltitude = -(jsonAltitude*4);
-    });	
-jsonAltitude = 250;
+            jsonAltitude = jsonAltitude - 33;
+//            jsonAltitude = 250;
+        }    
+alert("49\nちょうど撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
+jsonAltitude = -(jsonAltitude*2);
+
     
     places.forEach((place) => {
         let latitude = place.location.lat;
