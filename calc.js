@@ -116,10 +116,10 @@ function renderPlaces(places, pos) {
             jsonAltitude = 0;
         }
         else{
-            jsonAltitude = jsonAltitude - 33;
-//            jsonAltitude = 1000;
+//            jsonAltitude = jsonAltitude - 33;
+            jsonAltitude = 1000;
         }
-alert("43\nちょうど撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
+alert("44\nちょうど撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
 jsonAltitude = -jsonAltitude*4;
     });	
     
