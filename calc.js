@@ -68,7 +68,7 @@ function staticLoadPlaces() {
     return [
         {
             name: 'ship',
-            modelName: 'https://shimizukobo.github.io/ship01/assets/ship.glb',
+            modelName: 'https://shimizukobo.github.io/shidenkai_salvage/assets/ship.glb',
             location: {
                 lat: 32.94275472461306,
                 lng: 132.56692766713076,
@@ -123,7 +123,7 @@ function renderPlaces(places, pos) {
             jsonAltitude = jsonAltitude - 33;
 //            jsonAltitude = 250;
         }    
-alert("51\nちゃんと撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
+alert("52\nちゃんと撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
 jsonAltitude = -(jsonAltitude*3);
 
     
