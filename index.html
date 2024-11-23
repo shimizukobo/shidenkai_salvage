@@ -60,7 +60,7 @@
                     var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
                     // equirectangular
 
-alert("Save");
+alert("Save1");
                     
         if (width && height) {
             //videoのサイズをキャンバスにセット
@@ -90,7 +90,9 @@ alert("Save");
     var nowseconds = now.getSeconds();
 
     var text = nowyear + "" +  nowmon + "" +  nowday + "_" + nowhour + nowminutes + nowseconds; 
-            
+
+alert("Save2");
+
                         // jpeg画像を作成
                         // jpgの品質はデフォルト値の「0.92」とする
                         var snap = canvas.toDataURL('image/jpeg');
