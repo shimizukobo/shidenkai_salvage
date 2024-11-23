@@ -107,28 +107,6 @@
                         //自動ダウンロード
                         link.click();
         }
-
-/*
-                    if (width && height) {
-                        // カメラのサイズをcanvasにセット
-                        canvas.width = width;
-                        canvas.height = height;
-
-                        // canvasにカメラ画像を描いてからglbが映っているsceneを上書き
-                        context.drawImage(camera, 0, 0, width, height);
-                        context.drawImage(aScene, 0, 0, width, height);
-
-                        // jpeg画像を作成
-                        // jpgの品質はデフォルト値の「0.92」とする
-                        var snap = canvas.toDataURL('image/jpeg');
-                        var link = document.createElement("a");
-                        link.href = snap;
-                        link.download = "screenshot.jpg";
-
-                        //自動ダウンロード
-                        link.click();
-                    }
-*/
                 });
             });
         </script>
