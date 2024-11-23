@@ -123,7 +123,7 @@ function renderPlaces(places, pos) {
             jsonAltitude = jsonAltitude - 33;
 //            jsonAltitude = 250;
         }    
-alert("52\nちゃんと撮れるかな\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\nボタンをタップすると撮影できます。\n\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
+alert("\nちゃんと撮れるかな ver1\n紫電改引上げを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\nボタンをタップすると撮影できます。\n\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
 jsonAltitude = -(jsonAltitude*3);
 
     
