@@ -45,10 +45,6 @@
 //            document.getElementById("ship").addEventListener("click", function() {
 //            window.open('https://youtu.be/NCTkt73yIhc?si=tf8cUJFTn_dUZLOp', '_blank');});          
 
-//自宅
-//                gps-entity-place="latitude: 32.96415692283136; longitude: 132.57350878260334;"
-//久良湾
-//                gps-entity-place="latitude: 32.94288831590341; longitude: 132.56609060047407;"            
             document.getElementById("screenshot-button").addEventListener("click", function() {
                 html2canvas(document.body).then(function(canvas) {
                     // カメラ画像を取得する為、AR.jsで展開されているvideoを取得
@@ -56,9 +52,6 @@
                     // 空のキャンバスを用意
                     var canvas = document.createElement("canvas");
                     var context = canvas.getContext("2d");
-
-//        var resizedCanvas = document.createElement("rcanvas");
-//        var resizedContext = resizedCanvas.getContext("2d");
             
                     var width = camera.videoWidth;
                     var height = camera.videoHeight;
