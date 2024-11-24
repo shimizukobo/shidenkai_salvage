@@ -42,9 +42,6 @@
         <script src="https://shimizukobo.github.io/shidenkai_salvage/calc.js" type="module"></script>
         <script>
 
-//            document.getElementById("ship").addEventListener("click", function() {
-//            window.open('https://youtu.be/NCTkt73yIhc?si=tf8cUJFTn_dUZLOp', '_blank');});          
-
             document.getElementById("screenshot-button").addEventListener("click", function() {
                 html2canvas(document.body).then(function(canvas) {
                     // カメラ画像を取得する為、AR.jsで展開されているvideoを取得
@@ -100,8 +97,8 @@ alert("保存:"+text + ".jpg");
                         var snap = canvas.toDataURL('image/jpeg');
                         var link = document.createElement("a");
                         link.href = snap;
-                        link.download = "screenshot.jpg";
-                        //link.download = tostring(text) + ".jpg";
+                        //link.download = "screenshot.jpg";
+                        link.download = tostring(text) + ".jpg";
 
                         //自動ダウンロード
                         link.click();
