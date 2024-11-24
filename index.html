@@ -101,7 +101,7 @@ alert("保存:"+text + ".jpg");
                         var link = document.createElement("a");
                         link.href = snap;
                         //link.download = "screenshot.jpg";
-                        link.download = text + ".jpg";
+                        link.download = tostring(text) + ".jpg";
 
                         //自動ダウンロード
                         link.click();
