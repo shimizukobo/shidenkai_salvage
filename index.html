@@ -100,8 +100,8 @@ alert("保存:"+text + ".jpg");
                         var snap = canvas.toDataURL('image/jpeg');
                         var link = document.createElement("a");
                         link.href = snap;
-                        //link.download = "screenshot.jpg";
-                        link.download = tostring(text) + ".jpg";
+                        link.download = "screenshot.jpg";
+                        //link.download = tostring(text) + ".jpg";
 
                         //自動ダウンロード
                         link.click();
