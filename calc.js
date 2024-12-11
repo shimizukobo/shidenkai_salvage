@@ -136,7 +136,7 @@ alert("\nちゃんと撮れるかな ver1.0.0\n紫電改引上げを見るブラ
         cal.calcNewPosition(cal.currentPosition, cal.bearing, cal.newDistance);
         cal.calcSizeDist(cal.distance);
         
-jsonAltitude = jsonAltitude*((cal.distance‐cal.newDistance)/cal.distance);
+jsonAltitude = jsonAltitude*((cal.distance-cal.newDistance)/cal.distance);
 //jsonAltitude = -(jsonAltitude*(cal.newDistance/cal.distance));
        
         let model = document.createElement('a-entity');
